@@ -329,10 +329,14 @@ def request_cap():
 def get_output_paths():
     run_id = safe_str(run_id_var, "run01")
     condition = safe_str(condition_var, "condition")
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # Create main Data folder
-    data_root = os.path.join(script_dir, "Data")
+    # Go from python/src/ back to project root
+    project_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+
+    # Save data in project-root/Data/
+    data_root = os.path.join(project_root, "Data")
     os.makedirs(data_root, exist_ok=True)
 
     # Create date-wise folder: MM_DD_YYYY
@@ -340,7 +344,6 @@ def get_output_paths():
     date_path = os.path.join(data_root, date_folder)
     os.makedirs(date_path, exist_ok=True)
 
-    # File name from run_id and condition
     filename = os.path.join(date_path, f"{run_id}_{condition}.csv")
     backup_filename = os.path.join(date_path, f"{run_id}_{condition}_backup.csv")
 
