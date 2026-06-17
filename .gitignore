@@ -1,0 +1,21 @@
+# Data and measurement files
+Data/
+*.csv
+*_backup.csv
+
+# Old analysis/output folders
+Analysis/
+1May_26Analysis/
+30April_26Analysis/
+4May_26Analysis/
+
+# Windows/OneDrive
+desktop.ini
+
+# Python temporary files
+__pycache__/
+*.pyc
+
+# Arduino/build temporary files
+*.hex
+*.elf
