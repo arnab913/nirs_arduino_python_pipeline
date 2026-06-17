@@ -1,5 +1,7 @@
 # Data and measurement files
 Data/
+data/raw/
+data/processed/
 *.csv
 *_backup.csv
 
@@ -9,8 +11,10 @@ Analysis/
 30April_26Analysis/
 4May_26Analysis/
 
-# Windows/OneDrive
+# Windows/OneDrive/OS
 desktop.ini
+.DS_Store
+Thumbs.db
 
 # Python temporary files
 __pycache__/
